@@ -37,6 +37,8 @@ namespace Weather_Api.Data
             else
             {
                 response.Data = CreateToken(user);
+                response.Success = true;
+               
             }
 
             return response;

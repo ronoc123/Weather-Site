@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fNWKV9N2ndatxmrg/x6UsLJ710/t0vurFIMcgtt6iWXNB6aSqgRHMrBNzkSZeMijVjYXoCi4nkTQ1ZLyQRRTMA==",
+  "dgSpecHash": "9Ga6r0E1OB+TjipvjOG4ktz1eAS634uH5I2AXL6px+x+SvSmN8mj+3zq3yLziwICxCrvz3v3M7Zn1H/WDWQ5eQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\conor\\Desktop\\Weather-Application\\Weather-APi\\Weather-Api.csproj",
+  "projectFilePath": "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\Weather-Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\conor\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -47,7 +47,10 @@
     "C:\\Users\\conor\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\conor\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\conor\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\7.0.6\\swashbuckle.aspnetcore.filters.7.0.6.nupkg.sha512",
+    "C:\\Users\\conor\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\7.0.6\\swashbuckle.aspnetcore.filters.abstractions.7.0.6.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",

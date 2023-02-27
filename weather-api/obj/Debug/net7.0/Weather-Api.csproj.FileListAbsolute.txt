@@ -77,3 +77,6 @@ C:\Users\conor\Desktop\Weather-Application\Weather-APi\obj\Debug\net7.0\refint\W
 C:\Users\conor\Desktop\Weather-Application\Weather-APi\obj\Debug\net7.0\Weather-Api.pdb
 C:\Users\conor\Desktop\Weather-Application\Weather-APi\obj\Debug\net7.0\Weather-Api.genruntimeconfig.cache
 C:\Users\conor\Desktop\Weather-Application\Weather-APi\obj\Debug\net7.0\ref\Weather-Api.dll
+C:\Users\conor\Desktop\Weather-Application\weather-api\bin\Debug\net7.0\Scrutor.dll
+C:\Users\conor\Desktop\Weather-Application\weather-api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\conor\Desktop\Weather-Application\weather-api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
