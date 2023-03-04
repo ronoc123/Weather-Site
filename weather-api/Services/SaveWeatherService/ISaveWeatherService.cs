@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Weather_Api.Dto.WeatherDto;
 using Weather_Api.Model;
 
 namespace Weather_Api.Services.SaveWeatherService
@@ -6,9 +7,9 @@ namespace Weather_Api.Services.SaveWeatherService
     public interface ISaveWeatherService
     {
 
-        Task<ActionResult<List<WeatherLocation>>> GetAllSavedWeather();
+        Task<ActionResult<ServiceResponse<List<GetWeatherDto>>>> GetAllSavedWeather();
 
-        Task<ActionResult<WeatherLocation>> SaveWeatherLocation();
+        Task<ActionResult<ServiceResponse<GetWeatherDto>>> SaveWeatherLocation(AddUserWeatherDto weatherLocation);
 
         Task<ActionResult> DeleteWeatherLocation(int id);
 

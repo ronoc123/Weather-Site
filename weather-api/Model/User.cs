@@ -13,6 +13,6 @@
 
         public byte[] PasswordSalt { get; set; }
 
-        public List<WeatherLocation> WeatherLocations { get; set; }
+        public List<WeatherLocation> WeatherLocations { get; set; } = new List<WeatherLocation>();
     }
 }

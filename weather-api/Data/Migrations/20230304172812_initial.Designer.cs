@@ -11,8 +11,8 @@ using Weather_Api.Data;
 namespace Weather_Api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230227003227_User")]
-    partial class User
+    [Migration("20230304172812_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

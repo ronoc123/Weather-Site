@@ -24,7 +24,7 @@ namespace Weather_Api.Controllers
         {
             var response = await _authRepository.Register( new User { Username = request.Username }, request.Password);
 
-            if (!response.Success)
+            if (response.Success == false)
             {
                 return BadRequest(response);
             }

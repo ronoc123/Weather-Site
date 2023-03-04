@@ -64,6 +64,7 @@ namespace Weather_Api.Data
 
             await _context.SaveChangesAsync();
 
+            response.Success = true;
             response.Data = user.Id;
 
             return response;

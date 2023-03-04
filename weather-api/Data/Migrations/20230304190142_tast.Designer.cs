@@ -11,8 +11,8 @@ using Weather_Api.Data;
 namespace Weather_Api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230227002752_Initial")]
-    partial class Initial
+    [Migration("20230304190142_tast")]
+    partial class tast
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,7 +61,7 @@ namespace Weather_Api.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Weather_Api.Model.WeatherLocation", b =>

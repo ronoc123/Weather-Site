@@ -5,13 +5,13 @@
 namespace Weather_Api.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -22,7 +22,7 @@ namespace Weather_Api.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,9 +49,9 @@ namespace Weather_Api.Data.Migrations
                 {
                     table.PrimaryKey("PK_UserWeatherLocation", x => new { x.UsersId, x.WeatherLocationsId });
                     table.ForeignKey(
-                        name: "FK_UserWeatherLocation_User_UsersId",
+                        name: "FK_UserWeatherLocation_Users_UsersId",
                         column: x => x.UsersId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -75,7 +75,7 @@ namespace Weather_Api.Data.Migrations
                 name: "UserWeatherLocation");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "WeatherLocations");

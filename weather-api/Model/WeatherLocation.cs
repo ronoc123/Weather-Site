@@ -6,6 +6,6 @@
 
         public string City { get; set; }
 
-        public List<User> Users { get; set; }
+        public List<User> Users { get; set; } = new List<User>();
     }
 }

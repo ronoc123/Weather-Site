@@ -7,7 +7,7 @@ namespace Weather_Api.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-            
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -17,8 +17,14 @@ namespace Weather_Api.Data
         }
 
 
+
+
         public DbSet<WeatherLocation> WeatherLocations { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+
+
+       
     }
 }
