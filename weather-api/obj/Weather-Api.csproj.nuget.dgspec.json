@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\Weather-Api.csproj": {}
+    "C:\\Users\\conor\\desktop\\weather-application\\weather-api\\Weather-Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\Weather-Api.csproj": {
+    "C:\\Users\\conor\\desktop\\weather-application\\weather-api\\Weather-Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\Weather-Api.csproj",
+        "projectUniqueName": "C:\\Users\\conor\\desktop\\weather-application\\weather-api\\Weather-Api.csproj",
         "projectName": "Weather-Api",
-        "projectPath": "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\Weather-Api.csproj",
+        "projectPath": "C:\\Users\\conor\\desktop\\weather-application\\weather-api\\Weather-Api.csproj",
         "packagesPath": "C:\\Users\\conor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\obj\\",
+        "outputPath": "C:\\Users\\conor\\desktop\\weather-application\\weather-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\conor\\AppData\\Roaming\\NuGet\\NuGet.Config",

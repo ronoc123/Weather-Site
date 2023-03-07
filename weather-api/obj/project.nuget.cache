@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9Ga6r0E1OB+TjipvjOG4ktz1eAS634uH5I2AXL6px+x+SvSmN8mj+3zq3yLziwICxCrvz3v3M7Zn1H/WDWQ5eQ==",
+  "dgSpecHash": "dSgNCtosx1ygayMc1Dnj3UO4oxBSnGobuVR8vPGJ3i6AzaUFiqBto0MgLD0Fq/HmqOmYn6ly2rINrFVEaHA8HA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\conor\\Desktop\\Weather-Application\\weather-api\\Weather-Api.csproj",
+  "projectFilePath": "C:\\Users\\conor\\desktop\\weather-application\\weather-api\\Weather-Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\conor\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\conor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

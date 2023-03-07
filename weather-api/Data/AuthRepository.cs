@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Weather_Api.Dto.UserDtos;
 using Weather_Api.Model;
 
 namespace Weather_Api.Data
@@ -11,10 +13,14 @@ namespace Weather_Api.Data
     {
         public readonly DataContext _context;
         private readonly IConfiguration _configuration;
-        public AuthRepository(DataContext context, IConfiguration configuration)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IMapper _mapper;
+        public AuthRepository(DataContext context, IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IMapper mapper)
         {
             _context = context;
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
+            _mapper = mapper;
         }
 
 
@@ -36,9 +42,10 @@ namespace Weather_Api.Data
             }
             else
             {
+                user.LastLoginDate = DateTime.UtcNow;
                 response.Data = CreateToken(user);
                 response.Success = true;
-               
+               await _context.SaveChangesAsync();
             }
 
             return response;
@@ -59,6 +66,9 @@ namespace Weather_Api.Data
             CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
+            user.RegistrationDate = DateTime.Now;
+            user.LastLoginDate = DateTime.Now;
+
 
             _context.Users.Add(user);
 
@@ -79,6 +89,31 @@ namespace Weather_Api.Data
                 return true;
             }
             return false;
+        }
+
+        public async Task<ServiceResponse<GetUserDto>> GetCurrentUser()
+        {
+            var response = new ServiceResponse<GetUserDto>();   
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == GetUserId());
+
+            if (user == null)
+            {
+                response.Success = false;
+                response.Message = "No Current User Found";
+                return response;
+            }
+
+            response.Data = _mapper.Map<GetUserDto>(user);
+            response.Success = true;
+
+            return response;
+
+
+        }
+        private int GetUserId()
+        {
+            return int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)

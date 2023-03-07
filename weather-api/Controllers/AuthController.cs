@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Weather_Api.Data;
 using Weather_Api.Dto.UserDtos;
@@ -44,6 +45,21 @@ namespace Weather_Api.Controllers
             }
             return Ok(response);
         }
+
+        [HttpGet("GetUser"), Authorize]
+
+        public async Task<ActionResult<ServiceResponse<GetUserDto>>> GetCurrentUser()
+        {
+            var response = await _authRepository.GetCurrentUser();
+
+            if (!response.Success)
+            {
+                return BadRequest(response);
+            }
+            return Ok(response);
+        }
+
+        
 
     }
 }

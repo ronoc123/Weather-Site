@@ -23,10 +23,18 @@ namespace Weather_Api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet, Authorize(Roles = "User")]
         public async Task<ActionResult<ServiceResponse<List<GetWeatherDto>>>> GetWeatherLocations()
         {
-            return Ok(await _saveWeatherService.GetAllSavedWeather());
+
+            var response = await _saveWeatherService.GetAllSavedWeather();
+
+            if (!response.Value!.Success)
+            {
+                return Ok(response.Value);
+            }
+
+            return BadRequest(response.Value);
 
         }
 
@@ -34,7 +42,13 @@ namespace Weather_Api.Controllers
 
         public async Task<ActionResult<ServiceResponse<GetWeatherDto>>> AddWeatherLocation(AddUserWeatherDto request)
         {
-            return Ok(await _saveWeatherService.SaveWeatherLocation(request));
+
+            var response = await _saveWeatherService.SaveWeatherLocation(request);
+            if (!response.Value!.Success)
+            {
+               return Ok(response.Value);
+            }
+            return BadRequest(response.Value);
         }
 
     }

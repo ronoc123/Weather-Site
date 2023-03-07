@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\weather-api"
+    "\\weather-api",
+    "\\weather-api\\Controllers",
+    "\\weather-api\\Data",
+    "\\weather-api\\Dto",
+    "\\weather-api\\Model",
+    "\\weather-api\\Services",
+    "\\weather-api\\Services\\SaveWeatherService"
   ],
-  "SelectedNode": "\\Weather-Api.sln",
+  "SelectedNode": "\\weather-api\\Services\\SaveWeatherService\\SaveWeatherService.cs",
   "PreviewInSolutionExplorer": false
 }
