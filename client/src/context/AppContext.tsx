@@ -1,6 +1,6 @@
 import { useReducer, useContext, createContext, useEffect } from "react";
 import reducer from "./reducer";
-import { ForecastResponse } from "../model";
+import { ForecastResponse, LoginUser } from "../model";
 import axios from "axios";
 
 interface Values {
@@ -9,18 +9,41 @@ interface Values {
   userLocation: number[];
   hourlyWeather: ForecastResponse[];
   updateUserLocation: (city: string) => Promise<void>;
+  toggleUserInfo: () => void;
+  getUserInfo: () => void;
+  loginUser: (currentUser: LoginUser) => Promise<void>;
+  isUserInfoOpen: boolean;
+  token: string;
 }
+
+const token = localStorage.getItem("token");
+
 const initialState = {
   location: "",
   isLoading: false,
   userLocation: [],
   hourlyWeather: [],
+  isUserInfoOpen: false,
+  token: token ? token : "",
 };
 
 const AppContext = createContext<Values | null>(null);
 
 const AppProvider = ({ children }: any) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const authFetch = axios.create({
+    headers: {
+      Authorization: `Bearer ${state.token}`,
+    },
+  });
+
+  const addTokenToLocalStorage = (token: string) => {
+    localStorage.setItem("token", token);
+  };
+  const removeTokenFromLocalStorage = () => {
+    localStorage.removeItem("token");
+  };
 
   const getUserStartingLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -57,12 +80,45 @@ const AppProvider = ({ children }: any) => {
     }
   };
 
+  const toggleUserInfo = () => {
+    dispatch({ type: "TOGGLE_USER_INFO", payload: state.isUserInfoOpen });
+  };
+
+  const getUserInfo = async () => {
+    const user = await axios("/api/Auth/GetUser");
+  };
+
+  const loginUser = async (currentUser: LoginUser) => {
+    dispatch({ type: "LOGIN_USER_BEGIN" });
+    try {
+      const { data } = await axios.post("api/Auth/login", {
+        username: currentUser.username,
+        password: currentUser.password,
+      });
+      const { token } = data;
+
+      dispatch({ type: "SETUP_USER_SUCCESS", payload: token });
+
+      addTokenToLocalStorage(token);
+    } catch (error) {
+      dispatch({ type: "SETUP_USER_ERROR" });
+    }
+  };
+
   useEffect(() => {
     getUserStartingLocation();
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, updateUserLocation }}>
+    <AppContext.Provider
+      value={{
+        ...state,
+        updateUserLocation,
+        toggleUserInfo,
+        getUserInfo,
+        loginUser,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

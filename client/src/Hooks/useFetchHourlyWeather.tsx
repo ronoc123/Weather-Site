@@ -9,7 +9,6 @@ const useFetchHourlyWeather = (lat: number, lon: number) => {
     const { data } = await axios(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`
     );
-    console.log(data);
 
     setValue(data.list.slice(0, 4));
   }

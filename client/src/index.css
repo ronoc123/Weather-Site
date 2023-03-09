@@ -15,9 +15,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+input {
+  background: #f5fbff;
+}
 
 .full-screen {
   min-height: calc(100vh - 120px);
+}
+.pop-up {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  z-index: 5;
 }
 
 .background-image {

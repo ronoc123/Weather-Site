@@ -13,6 +13,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useAppContext } from "../context/AppContext";
 import { useState } from "react";
 import SearchBar from "@mui/material";
+import { LoginUser } from "../model";
 
 const theme = createTheme({
   palette: {
@@ -68,10 +69,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   const ctx = useAppContext();
   const [value, setValue] = useState<string>("");
+  const [user, setUser] = useState<LoginUser>();
 
   if (ctx === null) return <div>...Loading</div>;
 
-  const { updateUserLocation } = ctx;
+  const { updateUserLocation, loginUser, toggleUserInfo } = ctx;
+
+  const openUserInfo = () => {
+    toggleUserInfo();
+  };
 
   const handleSubmit = () => {
     updateUserLocation(value);
@@ -89,6 +95,7 @@ export default function SearchAppBar() {
               color="inherit"
               aria-label="open drawer"
               sx={{ mr: 2 }}
+              onClick={openUserInfo}
             >
               <AccountCircleIcon />
             </IconButton>

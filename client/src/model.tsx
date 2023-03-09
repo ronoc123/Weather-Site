@@ -120,3 +120,9 @@ interface Coordinates {
 }
 
 // 5 day 3 hour interface end
+
+// User model
+export interface LoginUser {
+  username: string;
+  password: string;
+}

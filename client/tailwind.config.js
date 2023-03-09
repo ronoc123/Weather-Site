@@ -17,6 +17,9 @@ module.exports = {
       gridTemplateColumns: {
         main: "2fr 1fr",
       },
+      width: {
+        90: "90%",
+      },
     },
   },
   plugins: [],
