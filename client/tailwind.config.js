@@ -20,6 +20,15 @@ module.exports = {
       width: {
         90: "90%",
       },
+      height: {
+        80: "80%",
+      },
+      minWidth: {
+        10: "10rem",
+      },
+      spacing: {
+        17: "4.25rem",
+      },
     },
   },
   plugins: [],

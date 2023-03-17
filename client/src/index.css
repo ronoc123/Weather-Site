@@ -18,6 +18,10 @@ code {
 input {
   background: #f5fbff;
 }
+button {
+  border: none;
+  background: none;
+}
 
 .full-screen {
   min-height: calc(100vh - 120px);

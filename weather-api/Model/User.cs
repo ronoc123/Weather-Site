@@ -12,7 +12,7 @@ namespace Weather_Api.Model
         public string Role { get; set; } = "User";
 
         [Required]
-        public string Email { get; set; } = string.Empty;
+        public string Email { get; set; }
 
         public DateTime RegistrationDate { get; set; }
 

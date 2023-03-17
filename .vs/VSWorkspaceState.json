@@ -5,10 +5,11 @@
     "\\weather-api\\Controllers",
     "\\weather-api\\Data",
     "\\weather-api\\Dto",
+    "\\weather-api\\Extension",
     "\\weather-api\\Model",
     "\\weather-api\\Services",
     "\\weather-api\\Services\\SaveWeatherService"
   ],
-  "SelectedNode": "\\weather-api\\Services\\SaveWeatherService\\SaveWeatherService.cs",
+  "SelectedNode": "\\weather-api\\Extension\\UserExtensions.cs",
   "PreviewInSolutionExplorer": false
 }

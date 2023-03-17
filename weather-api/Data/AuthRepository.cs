@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Weather_Api.Dto.UserDtos;
+using Weather_Api.Extension;
 using Weather_Api.Model;
 
 namespace Weather_Api.Data
@@ -68,6 +69,8 @@ namespace Weather_Api.Data
             user.PasswordSalt = passwordSalt;
             user.RegistrationDate = DateTime.Now;
             user.LastLoginDate = DateTime.Now;
+        
+            
 
 
             _context.Users.Add(user);
@@ -95,7 +98,11 @@ namespace Weather_Api.Data
         {
             var response = new ServiceResponse<GetUserDto>();   
 
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == GetUserId());
+            // check this line of code
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == _httpContextAccessor.GetUserId());
+            // var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == GetUserId());
+
 
             if (user == null)
             {

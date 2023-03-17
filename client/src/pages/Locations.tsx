@@ -1,11 +1,9 @@
-import React from "react";
-import WeatherCard from "../Components/WeatherCard";
-import WeatherLocation from "../Components/WeatherLocation";
+import SavedWeatherLocation from "../Components/SavedWeatherLocation";
 
 const Locations = () => {
   return (
-    <div className="full-screen bg-gradient-to-b from-mid-purple to-light-purple grid justify-center">
-      <WeatherLocation />
+    <div className="full-screen bg-gradient-to-b from-mid-purple to-light-purple flex justify-center">
+      <SavedWeatherLocation />
     </div>
   );
 };

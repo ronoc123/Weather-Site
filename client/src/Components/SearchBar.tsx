@@ -14,6 +14,7 @@ import { useAppContext } from "../context/AppContext";
 import { useState } from "react";
 import SearchBar from "@mui/material";
 import { LoginUser } from "../model";
+import DropDownMenu from "./DropDownMenu";
 
 const theme = createTheme({
   palette: {
@@ -69,14 +70,28 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   const ctx = useAppContext();
   const [value, setValue] = useState<string>("");
-  const [user, setUser] = useState<LoginUser>();
+  const [dropDown, setDropDown] = useState<boolean>(false);
 
   if (ctx === null) return <div>...Loading</div>;
 
-  const { updateUserLocation, loginUser, toggleUserInfo } = ctx;
+  const {
+    updateUserLocation,
+    loginUser,
+    toggleUserInfo,
+    getUserInformation,
+    isUserLoggedIn,
+    user,
+  } = ctx;
 
   const openUserInfo = () => {
-    toggleUserInfo();
+    if (isUserLoggedIn) {
+      if (user == null) {
+        getUserInformation();
+      }
+      setDropDown(!dropDown);
+    } else {
+      toggleUserInfo();
+    }
   };
 
   const handleSubmit = () => {
@@ -88,13 +103,14 @@ export default function SearchAppBar() {
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
+          {dropDown && <DropDownMenu />}
           <Toolbar>
             <IconButton
-              size="large"
+              size="small"
               edge="start"
               color="inherit"
               aria-label="open drawer"
-              sx={{ mr: 2 }}
+              sx={{ mr: 1 }}
               onClick={openUserInfo}
             >
               <AccountCircleIcon />

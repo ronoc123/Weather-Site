@@ -126,3 +126,15 @@ export interface LoginUser {
   username: string;
   password: string;
 }
+
+export interface User {
+  username: string;
+  role: string;
+  email: string;
+  registrationDate: string;
+  lastLoginDate: string;
+}
+
+export interface CityLocation {
+  city: string;
+}

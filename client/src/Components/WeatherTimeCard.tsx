@@ -1,4 +1,3 @@
-import { SiIcloud } from "react-icons/si";
 import { militaryToRegularTime } from "../utils/MilitaryTime";
 import { Weather } from "../model";
 
@@ -13,7 +12,7 @@ const WeatherTimeCard: React.FC<Props> = ({ temp, icon, time, weather }) => {
   return (
     <div className="grid place-content-center p-8 text-center text-lg">
       {/* time of day */}
-      <h1>{militaryToRegularTime(time.split(" ")[1])}</h1>
+      <h1> {militaryToRegularTime(time.split(" ")[1])}</h1>
       {/* temperature */}
       <h1>{temp}°</h1>
       {/* weather logo */}

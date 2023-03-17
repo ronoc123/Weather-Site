@@ -23,7 +23,7 @@ namespace Weather_Api.Controllers
 
         public async Task<ActionResult<ServiceResponse<int>>> Register(AddUserDto request)
         {
-            var response = await _authRepository.Register( new User { Username = request.Username }, request.Password);
+            var response = await _authRepository.Register( new User { Username = request.Username, Email = request.Email }, request.Password);
 
             if (response.Success == false)
             {
